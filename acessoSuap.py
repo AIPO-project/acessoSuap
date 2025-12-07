@@ -2,13 +2,13 @@ import requests
 from getpass import getpass
 
 api_url = "https://suap.ifrn.edu.br/api/"
-
+#/api/token/pair
 user = input("user: ")
 password = getpass()
 
 data = {"username": user, "password": password}
 
-response = requests.post(api_url + "v2/autenticacao/token/", json=data)
+response = requests.post(api_url + "token/pair", json=data)
 
 if response.status_code == 200:
     token = response.json().get("access")
@@ -17,11 +17,11 @@ if response.status_code == 200:
     headers = {
         "Authorization": f'Bearer {token}'
     }
-
-    response_meus_dados = requests.get(api_url + "v2/minhas-informacoes/meus-dados/", headers=headers)
+#/api/rh/meus-dados/
+    response_meus_dados = requests.get(api_url + "rh/meus-dados/", headers=headers)
 
     if response_meus_dados.status_code == 200:
-        print("Informações do Aluno:")
+        print("Informações:")
         print(response_meus_dados.json())
         print("")
         print(response_meus_dados.json()["matricula"])
