@@ -2,7 +2,6 @@ import requests
 from getpass import getpass
 
 api_url = "https://suap.ifrn.edu.br/api/"
-#/api/token/pair
 user = input("user: ")
 password = getpass()
 
@@ -17,7 +16,6 @@ if response.status_code == 200:
     headers = {
         "Authorization": f'Bearer {token}'
     }
-#/api/rh/meus-dados/
     response_meus_dados = requests.get(api_url + "rh/meus-dados/", headers=headers)
 
     if response_meus_dados.status_code == 200:
