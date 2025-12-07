@@ -1,6 +1,6 @@
 # [Script simples para acesso ao SUAP](https://suap.ifrn.edu.br/api/docs/#/)
 
-Este é um script simples para testar a API do SUAP. Esse script consegue um token jwt do SUAP e utiliza esse token para fazer um acesso aos dados de um servidor.
+Este é um script simples para testar a API do SUAP utilizando python e requests. Esse script consegue um token jwt do SUAP e utiliza esse token para fazer um acesso aos dados de um servidor.
 
 Os endpoints utilizados:
 
